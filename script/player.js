@@ -1,15 +1,17 @@
 class Player {
-    constructor(x, y, scaleH, scaleW, speed) {
+    constructor(x, y, speed, scale) {
         this.x = x
         this.y = y
-        this.scaleH = scaleH
-        this.scaleW = scaleW
         this.speed = speed
+        this.scale = scale
+        rect(this.x, this.y, this.scale, this.scale)
+    }
 
+    update() {
+        fill("blue")
+        rect(this.x, this.y, this.scale, this.scale)
     }
-    createPlayer() {
-        rect(this.x, this.y, this.scaleH, this.scaleW)
-    }
+
     move() {
         switch (keyCode) {
             case UP_ARROW:

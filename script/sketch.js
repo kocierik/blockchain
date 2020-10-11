@@ -28,9 +28,11 @@ function lose() {
         const risultato = points[i].checkCollision(player.x, player.y)
         if (risultato.perso) {
             console.log("perso")
+            document.getElementById('gamePoint').innerHTML = `You LOSE -- Total SCORE : ${score} `
             noLoop()
         } else if (risultato.isCollision && !risultato.perso) {
             score++
+            document.getElementById('gamePoint').innerHTML = `SCORE : ${score} `
             const xA = width / scale * floor(random(scale))
             const yB = height / scale * floor(random(scale))
             while (points[i].x == xA && points[i].y == yB) {

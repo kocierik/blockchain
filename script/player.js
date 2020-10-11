@@ -30,13 +30,13 @@ class Player {
         }
     }
     overflowCanvas() {
-        if (this.x > width)
+        if (this.x + this.scale > width)
             this.x = 0
-        if (this.y > height)
+        if (this.y + this.scale > height)
             this.y = 0
-        if (this.x < 0)
+        if (this.x + this.scale < 0)
             this.x = width
-        if (this.y < 0)
+        if (this.y + this.scale < 0)
             this.y = height
     }
 }

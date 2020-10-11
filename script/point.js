@@ -33,4 +33,5 @@ class Point {
     getPassatoSopra() {
         return this.giaPassatoSopra
     }
+
 }

@@ -16,7 +16,14 @@ function draw() {
     player.update()
     player.overflowCanvas()
     player.move()
+    lose()
 
+    for (let i = 0; i < points.length; i++) {
+        points[i].update()
+    }
+}
+
+function lose() {
     for (let i = 0; i < points.length; i++) {
         const risultato = points[i].checkCollision(player.x, player.y)
         if (risultato.perso) {
@@ -26,10 +33,14 @@ function draw() {
             score++
             const xA = width / scale * floor(random(scale))
             const yB = height / scale * floor(random(scale))
+            while (points[i].x == xA && points[i].y == yB) {
+                points[score] = new Point(xA, yB, scale)
+            }
             points[score] = new Point(xA, yB, scale)
         }
     }
-    for (let i = 0; i < points.length; i++) {
-        points[i].update()
-    }
 }
+//controllare la collisione
+//se c'è una collisione controllare se esiste un blocco nella stessa posizione 
+//se c'è la collisione ed esiste già un blocco genera un'altra posizione del blocco
+//se c'è la collisione e non esiste già un blocco genera il blocco nella posizione corrente

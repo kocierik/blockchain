@@ -1,4 +1,26 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+
 body {
     margin: 0px;
     overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.p5canvas__position {
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.p5Canvas {
+    display: flex;
+    flex: 0 0 auto;
+    border-radius: 8px;
+    align-items: center;
 }
